@@ -1,0 +1,54 @@
+using System;
+using System.Threading;
+
+namespace Lernen
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Clear();
+            Console.Title = "SendNudes";
+            Console.ForegroundColor = ConsoleColor.Green;            //Irrelevant
+
+            Random RG = new Random();                                
+            char[] input = "test".ToCharArray();                             //input, variabel
+            char[] alphabet = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz_ ".ToCharArray();
+            char[] solution = new char[input.Length];
+            bool finish = true;
+            
+            for (int i = 0; i < input.Length; i++)                  //solution = *******
+            {
+                solution[i] = '*';
+            }
+
+            while (finish == true)                                  //finish =Schalter um Programm anzuhalten
+            {
+                for (int i = 0; i < input.Length; i++)                      //i < input.Length definiert die Anzahl der Chars in der Ausgabe
+                {
+                    int randomNumber = RG.Next(0, alphabet.Length);
+                    char randomChar = alphabet[randomNumber];               // zufälliger Char aus alphabet
+                    Console.Write(randomChar);
+                    
+
+                    if (input[i].Equals(randomChar))                        //wenn: zufälliger Char == Char aus input
+                    {
+                        
+                        solution[i] = randomChar;                               //dann: "*" in solution werden durch randomChar ersetzt
+                       
+                        if (solution == input)                                      //wenn: Ergebnis = Eingabe  
+                        {                                                           //dann: finish Schalter wird false und beendet Programm (Zeile 30)
+                            finish = false;
+                        }
+                    }      
+                }
+                
+                Console.WriteLine();               
+                Console.Write(solution);               
+                Thread.Sleep(10);
+                Console.Clear();
+
+            }
+        }
+    }
+}
