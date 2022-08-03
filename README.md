@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Psychokater
 - 👀 I’m interested in learning Programming
-- 🌱 I’m currently learning C#
+- 🌱 I’m currently learning C#, Python, Angular
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me: pm...
 
